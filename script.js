@@ -9,11 +9,8 @@ function generateQuote() {
   return quote;
 }
 
-document.getElementById("generate").addEventListener("click", function() {
-  document.getElementById("quote").textContent = generateQuote();
-});
 
-document.getElementById("number").addEventListener("change", function() {
+document.getElementById("generate-multiple").addEventListener("click", function() {
   let number = document.getElementById("number").value;
   let quotes = "";
   for (let i = 0; i < number; i++) {

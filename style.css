@@ -11,6 +11,18 @@ h1 {
   padding: 20px 0;
 }
 
+.content {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
 button {
   display: block;
   width: 200px;
@@ -29,7 +41,6 @@ button:hover {
 }
 
 blockquote, label, input {
-  width: 100%;
   padding: 20px;
   margin: 10px 0;
   box-sizing: border-box;
@@ -45,4 +56,20 @@ input[type="number"] {
   width: 25%;
   margin: 0 auto;
   display: block;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  button {
+    width: 80%;
+  }
+
+  input[type="number"] {
+    width: 80%;
+  }
 }
