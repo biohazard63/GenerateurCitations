@@ -1,0 +1,44 @@
+{
+  "citations": [
+    {
+      "auteur": "Albert Einstein",
+      "citation": "La créativité, c'est l'intelligence qui s'amuse."
+    },
+    {
+      "auteur": "William Shakespeare",
+      "citation": "Être ou ne pas être, telle est la question."
+    },
+    {
+      "auteur": "Mahatma Gandhi",
+      "citation": "Soyez le changement que vous voulez voir dans le monde."
+    },
+    {
+      "auteur": "Jane Austen",
+      "citation": "La vie est une succession de leçons, qui doivent être vécues pour être comprises."
+    },
+    {
+      "auteur": "Martin Luther King Jr.",
+      "citation": "L'obscurité ne peut pas chasser l'obscurité ; seule la lumière le peut. La haine ne peut pas chasser la haine ; seul l'amour le peut."
+    },
+    {
+      "auteur": "Coco Chanel",
+      "citation": "La mode se démode, le style jamais."
+    },
+    {
+      "auteur": "Nelson Mandela",
+      "citation": "L'éducation est l'arme la plus puissante que vous pouvez utiliser pour changer le monde."
+    },
+    {
+      "auteur": "Maya Angelou",
+      "citation": "Vous seul êtes assez courageux pour choisir, vous seul savez si la vie que vous vivez est la vie que vous méritez."
+    },
+    {
+      "auteur": "Stephen Hawking",
+      "citation": "Le plus grand ennemi de la connaissance n'est pas l'ignorance, c'est l'illusion de la connaissance."
+    },
+    {
+      "auteur": "Oscar Wilde",
+      "citation": "Soyez vous-même ; tout le monde d'autre est déjà pris."
+    }
+  ]
+}
