@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+//error_reporting(E_ALL);
+//ini_set('display_errors', 1);
 
 $jsonContent = file_get_contents('citation.json');
 
@@ -68,7 +68,6 @@ function exporterCitationEnImage($citation, $index)
 
     imagettftext($image, 20, 0, 10, 50, $color, $fontPath, $citation);
 
-    // Set headers
     header('Content-Description: File Transfer');
     header('Content-Type: image/jpeg');
     header('Content-Disposition: attachment; filename=citation' . $index . '.jpg');
@@ -85,9 +84,10 @@ function exporterCitationEnImage($citation, $index)
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
     <meta charset="utf-8">
+
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="style.css">
 
