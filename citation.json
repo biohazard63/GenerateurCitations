@@ -39,6 +39,46 @@
     {
       "auteur": "Oscar Wilde",
       "citation": "Soyez vous-même ; tout le monde d'autre est déjà pris."
+    },
+    {
+      "auteur": "Confucius",
+      "citation": "La vie est vraiment simple, mais nous insistons pour la rendre compliquée."
+    },
+    {
+      "auteur": "Friedrich Nietzsche",
+      "citation": "Celui qui a un pourquoi pour vivre peut supporter presque n'importe quel comment."
+    },
+    {
+      "auteur": "Simone de Beauvoir",
+      "citation": "On ne naît pas femme, on le devient."
+    },
+    {
+      "auteur": "Steve Jobs",
+      "citation": "Votre travail va remplir une grande partie de votre vie, et la seule façon d’être vraiment satisfait est de faire ce que vous croyez être un grand travail. Et la seule façon de faire un grand travail est d’aimer ce que vous faites."
+    },
+    {
+      "auteur": "Leonardo da Vinci",
+      "citation": "La simplicité est la sophistication suprême."
+    },
+    {
+      "auteur": "Virginia Woolf",
+      "citation": "La vie est un rêve, c'est le réveil qui nous tue."
+    },
+    {
+      "auteur": "Albert Camus",
+      "citation": "La liberté est un fardeau bien lourd à porter, bien plus lourd que le fardeau de l’obéissance."
+    },
+    {
+      "auteur": "Socrate",
+      "citation": "Une vie non examinée ne vaut pas la peine d'être vécue."
+    },
+    {
+      "auteur": "Marie Curie",
+      "citation": "Dans la vie, rien n'est à craindre, tout est à comprendre."
+    },
+    {
+      "auteur": "Aristote",
+      "citation": "L'ignorance est la racine de tous les maux."
     }
   ]
 }
