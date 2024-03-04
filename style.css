@@ -12,15 +12,21 @@ h1 {
 }
 
 .content {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
   width: 80%;
   margin: 0 auto;
   padding: 20px;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
+}
+
+.form-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-wrapper {
+  width: 45%;
 }
 
 button {
@@ -53,9 +59,7 @@ blockquote {
 }
 
 input[type="number"] {
-  width: 25%;
-  margin: 0 auto;
-  display: block;
+  width: 100%;
 }
 
 img{
@@ -63,10 +67,12 @@ img{
   margin: 20px auto;
 }
 
-/* Media Queries */
 @media screen and (max-width: 768px) {
-  .content {
+  .form-container {
     flex-direction: column;
+  }
+
+  .form-wrapper {
     width: 100%;
   }
 

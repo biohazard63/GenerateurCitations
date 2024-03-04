@@ -80,7 +80,6 @@ function exporterCitationEnImage($citation, $index)
     imagedestroy($image);
     exit;
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -96,34 +95,36 @@ function exporterCitationEnImage($citation, $index)
 <body>
 <h1>Generateur de Citations</h1>
 <div class="content">
-    <h2> generateur via POST</h2>
-    <form method="post">
-        <label for="number">Nombre de citations à générer :</label>
-        <input type="number" id="number" name="number" min="1" max="10">
-        <button type="submit" name="generate">Generer une citation</button>
-    </form>
-
-
-    <!--    <h2> generateur via get</h2>-->
-    <!---->
-    <!--    <form method="get">-->
-    <!---->
-    <!--        <label for="number">Nombre de citations à générer :</label>-->
-    <!--        <input type="number" id="number" name="number" min="1" max="10">-->
-    <!--        <button type="submit" name="generate">Generer une citation</button>-->
-    <!--    </form>-->
-
-
-    <?php
-    foreach ($citationsGenerees as $index => $citation) {
-        echo "<blockquote>$citation</blockquote>";
-        echo "<form method='post'>";
-        echo "<input type='hidden' name='index' value='$index'>";
-        echo "<button type='submit' name='export'>Exporter cette citation</button>";
-        echo "</form>";
-        echo "<img src='citation" . $index . ".jpg' alt='Image de citation'>";
-    }
-    ?>
+    <div class="form-container">
+        <div class="form-wrapper">
+            <h2>Generateur via POST</h2>
+            <form method="post">
+                <label for="number">Nombre de citations à générer :</label>
+                <input type="number" id="number" name="number" min="1" max="10">
+                <button type="submit" name="generate">Generer une citation</button>
+            </form>
+        </div>
+        <div class="form-wrapper">
+            <h2>Generateur via GET</h2>
+            <form method="get">
+                <label for="number">Nombre de citations à générer :</label>
+                <input type="number" id="number" name="number" min="1" max="10">
+                <button type="submit" name="generate">Generer une citation</button>
+            </form>
+        </div>
+    </div>
+    <div class="quote-container">
+        <?php
+        foreach ($citationsGenerees as $index => $citation) {
+            echo "<blockquote>$citation</blockquote>";
+            echo "<form method='post'>";
+            echo "<input type='hidden' name='index' value='$index'>";
+            echo "<button type='submit' name='export'>Exporter cette citation</button>";
+            echo "</form>";
+            echo "<img src='citation" . $index . ".jpg' alt='Image de citation'>";
+        }
+        ?>
+    </div>
 </div>
 <!--<script src="script.js"></script>-->
 </body>
