@@ -14,7 +14,7 @@ h1 {
 .content {
   display: flex;
   justify-content: center;
-  flex-direction: row;
+  flex-direction: column;
   width: 80%;
   margin: 0 auto;
   padding: 20px;
@@ -56,6 +56,11 @@ input[type="number"] {
   width: 25%;
   margin: 0 auto;
   display: block;
+}
+
+img{
+  display: block;
+  margin: 20px auto;
 }
 
 /* Media Queries */
