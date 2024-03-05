@@ -16,61 +16,22 @@ if ($data === null) {
 function genererCitation($data)
 {
     $index = rand(0, count($data) - 1);
-    return $data[$index]; // return the whole array element, not just the quote
+    return $data[$index];
 }
 
 $citationsGenerees = [];
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['generate'])) {
-    $nombreDeCitations = $_POST['number'];
+if (!isset($_SESSION['citationsGenerees']) ||
+    ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['generate'])) ||
+    ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['generate']))) {
+    $nombreDeCitations = $_POST['number'] ?? $_GET['number'] ?? 0;
     for ($i = 0; $i < $nombreDeCitations; $i++) {
         $citation = genererCitation($data['citations']);
         $citationsGenerees[] = $citation;
     }
     $_SESSION['citationsGenerees'] = $citationsGenerees;
-} elseif ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['generate'])) {
-    $nombreDeCitations = $_GET['number'];
-    for ($i = 0; $i < $nombreDeCitations; $i++) {
-        $citation = genererCitation($data['citations']);
-        $citationsGenerees[] = $citation;
-    }
-    $_SESSION['citationsGenerees'] = $citationsGenerees;
-}
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['export'])) {
-    $index = $_POST['index'];
-    $citationsGenerees = $_SESSION['citationsGenerees'] ?? [];
-    if (isset($citationsGenerees[$index])) {
-        exporterCitationEnImage($citationsGenerees[$index]['citation'], $citationsGenerees[$index]['auteur'], $index);
-    } else {
-        echo "No citation to export at index $index";
-    }
-}
-
-function exporterCitationEnImage($citation,$auteur, $index)
-{
-    if ($citation === null) {
-        echo "Cannot export null citation";
-        return;
-    }
-    $image = imagecreatetruecolor(500, 200);
-    $color = imagecolorallocate($image, 255, 255, 255);
-    $backgroundColor = imagecolorallocate($image, 0, 0, 0);
-    imagefill($image, 0, 0, $backgroundColor);
-    $fontPath = 'Brillant.ttf';
-    imagettftext($image, 20, 0, 10, 50, $color, $fontPath, $citation);
-    imagettftext($image, 20, 0, 10, 100, $color, $fontPath, "- $auteur");
-    header('Content-Description: File Transfer');
-    header('Content-Type: image/jpeg');
-    header('Content-Disposition: attachment; filename=citation' . $index . '.jpg');
-    header('Expires: 0');
-    header('Cache-Control: must-revalidate');
-    header('Pragma: public');
-
-    imagejpeg($image);
-
-    imagedestroy($image);
-    exit;
+} else {
+    $citationsGenerees = $_SESSION['citationsGenerees'];
 }
 ?>
 
@@ -111,11 +72,13 @@ function exporterCitationEnImage($citation,$auteur, $index)
             echo "<blockquote>$citation<footer> - $auteur</footer></blockquote>";
             echo "<form method='post'>";
             echo "<input type='hidden' name='index' value='$index'>";
-            echo "<button type='submit' name='export'>Exporter cette citation</button>";
+            echo "<button type='submit' name='export' class='exportButton' 
+            data-index='$index' data-citation='" . htmlspecialchars($citation, ENT_QUOTES) . "' data-auteur='$auteur'>Exporter cette citation</button>";
             echo "</form>";
         }
         ?>
     </div>
 </div>
+<script src="script.js"></script>
 </body>
 </html>
